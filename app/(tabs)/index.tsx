@@ -1,20 +1,18 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
+import { StyleSheet, Image, TextInput, Button } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
-import { TextInput } from 'react-native-gesture-handler'
 
 const app = () => {
   return (
-<SafeAreaProvider>
-    <SafeAreaView style={Style.page}>
-      <Image source={require('../../assets/images/react-logo.png')} style={Style.img} />
-      <View>
-        <TextInput style={Style.input} placeholder='Username'/>
-        <TextInput style={Style.input} placeholder="Password"/>
-      </View>
-    </SafeAreaView>
-</SafeAreaProvider>
-)
+    <SafeAreaProvider>
+      <SafeAreaView style={Style.page}>
+        <Image source={require('../../assets/images/react-logo.png')} style={Style.img} />
+        <TextInput style={Style.input} inputMode='email' clearButtonMode='while-editing' placeholder='Username' />
+        <TextInput style={Style.input} secureTextEntry={true} clearButtonMode='while-editing' placeholder="Password" />
+        <Button title='Login' onPress={() => { }} />
+      </SafeAreaView>
+    </SafeAreaProvider>
+  )
 }
 
 export default app
@@ -44,10 +42,10 @@ const Style = StyleSheet.create({
     backgroundColor: 'grey',
     color: 'white',
     width: 200,
-    height: 20, 
+    height: 30,
     borderRadius: 10,
     margin: 10,
     padding: 5
-    }
+  }
 
 })
