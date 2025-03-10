@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Image, TextInput, Button, useColorScheme, View, StatusBar, Text, TouchableOpacity } from 'react-native'
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import { NavigationContainer } from '@react-navigation/native'
+import { Link } from 'expo-router'
 
 
 const App = () => {
@@ -21,9 +22,12 @@ const App = () => {
             <TextInput style={Style.input} inputMode='email' clearButtonMode='while-editing' placeholder='Username' />
             <TextInput style={Style.input} secureTextEntry={true} clearButtonMode='while-editing' placeholder="Password" />
             <Button title='Login' onPress={() => { }} />
-                <Text style={Style.text}>
-                    Don't have an account?
-                </Text>
+
+                <View style={Style.text}>
+                    <Link href="./signup" style={Style.text}>Don't have an account?</Link>
+                </View>
+
+
                 <Text style={Style.text}>
                     Forgot password?
                 </Text>
