@@ -10,6 +10,7 @@ const App = () => {
 
     const colorScheme = useColorScheme();
     const backgroundColor = colorScheme === 'dark' ? '#333333' : '#eeeeee';
+    const txtColor = colorScheme === 'dark' ? '#eeeeee' : '#222831';
 
     React.useEffect(() => {
         StatusBar.setBackgroundColor(backgroundColor);
@@ -19,14 +20,13 @@ const App = () => {
         <SafeAreaView style={[Style.page, { backgroundColor }]}>
             <StatusBar backgroundColor={backgroundColor} barStyle={colorScheme === 'dark' ? 'light-content' : 'dark-content'} />
             <Image source={require('../assets/images/react-logo.png')} style={Style.img} />
-            <TextInput style={Style.input} inputMode='email' clearButtonMode='while-editing' placeholder='Username' />
-            <TextInput style={Style.input} secureTextEntry={true} clearButtonMode='while-editing' placeholder="Password" />
-            <Button title='Login' onPress={() => { }} />
+            <TextInput style={Style.input} inputMode='email' clearButtonMode='while-editing' placeholder='Username' placeholderTextColor="#757575"/>
+            <TextInput style={Style.input} secureTextEntry={true} clearButtonMode='while-editing' placeholder="Password" placeholderTextColor="#757575" />
+            <Button title="Login" onPress={() => { }} />
 
                 <View style={Style.text}>
                     <Link href="./signup" style={Style.text}>Don't have an account?</Link>
                 </View>
-
 
                 <Text style={Style.text}>
                     Forgot password?
@@ -55,8 +55,8 @@ const Style = StyleSheet.create({
     },
     input: {
         borderWidth: 2,
-        borderColor: 'white',
-        backgroundColor: 'grey',
+        borderColor: '#d9d9d9',
+        backgroundColor: '#ffffff',
         color: 'white',
         width: 200,
         height: 30,
